@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{%block title%}Contact|Plex Shoping{%endblock title%}
+{% block content%}
+<h2>CONTACT US</h2>
+<p>Welcome to <strong>Zeeshan's Plex Shoping</strong></p>
+<p>Please tell us your information in given form</p>
+{% endblock content%}
+
+{%block body%}
+
+<h1 class='text-center'>Contact Us </h1>
+<div class='container mt-2'>
+     <form method="post" action="/contact">    <!--for submiting the form -->
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="Enter your name ">
+        
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name ="email" aria-describedby="Enter your Email ">
+        <div id="emailHelp" class="form-text">We'll never share your Email with anyone else.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="Enter your Phone Number ">
+        <div id="emailHelp" class="form-text">We'll never share your Phone Number with anyone else.</div>
+      </div>
+
+
+      
+
+      
+
+      <div class="mb-3">
+        <label for="desc" class="form-label">How can i help you--</label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form> 
+</div>
+{%endblock body%}

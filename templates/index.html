@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{%load static %}
+
+{%block title %} Home_Plex Shoping {% endblock title %}
+{% block content %}
+
+<h2>Welcome Plex Shoping</h2>
+<p>Shop smart with Plex Shoping – your trusted online store for quality products, secure payments, and fast delivery. Discover watches, gadgets, and more – all in one place.</p>
+
+{% endblock content %}
+
+{% block body %}
+
+ <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Welcome to Plex Shoping</h2>
+        
+        <p><span>Check Our</span> <span class="description-title">Product</span></p>
+      </div><!-- End Section Title -->
+      <div class="container text-center">
+        <h1>Check our  Flashback sale</h1>
+      </div>
+      
+      <div class="container mt-4">
+        
+  <div class="row">
+    {% for product in products %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="415" height="275">
+
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.desc }}</p>
+            <p class="card-text"><strong>Rs.{{ product.price }}</strong></p>
+
+            <!-- 🔴 Add to Cart & ⚫ View Buttons -->
+            <div class="d-flex justify-content-between mt-3">
+              <a href="#" class="btn btn-danger">Add to Cart</a>
+              <a href="#" class="btn btn-dark">View</a>
+            </div>
+
+          </div>
+
+          
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+    
+
+      
+
+    </section><!-- /Portfolio Section -->
+
+{% endblock body %}
